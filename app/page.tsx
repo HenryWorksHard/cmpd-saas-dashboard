@@ -29,6 +29,15 @@ interface QASection {
   tests: QATest[];
 }
 
+interface QANote {
+  id: number;
+  section: string;
+  testId?: number;
+  text: string;
+  type: 'bug' | 'improvement' | 'note';
+  timestamp: string;
+}
+
 const phases: Phase[] = [
   {
     id: 1,
@@ -343,10 +352,13 @@ const tiers = [
   { name: 'Gym', clients: 'Unlimited', price: 299 },
 ];
 
+const initialNotes: QANote[] = [];
+
 export default function Dashboard() {
   const [mounted, setMounted] = useState(false);
   const [activeTab, setActiveTab] = useState<'build' | 'qa'>('qa');
   const [qaTests, setQaTests] = useState<QASection[]>(qaData);
+  const [qaNotes, setQaNotes] = useState<QANote[]>(initialNotes);
 
   useEffect(() => {
     setMounted(true);
@@ -354,6 +366,10 @@ export default function Dashboard() {
     const saved = localStorage.getItem('cmpd-qa-tests');
     if (saved) {
       setQaTests(JSON.parse(saved));
+    }
+    const savedNotes = localStorage.getItem('cmpd-qa-notes');
+    if (savedNotes) {
+      setQaNotes(JSON.parse(savedNotes));
     }
   }, []);
 
@@ -363,6 +379,17 @@ export default function Dashboard() {
       localStorage.setItem('cmpd-qa-tests', JSON.stringify(qaTests));
     }
   }, [qaTests, mounted]);
+
+  // Save notes to localStorage
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem('cmpd-qa-notes', JSON.stringify(qaNotes));
+    }
+  }, [qaNotes, mounted]);
+
+  const deleteNote = (noteId: number) => {
+    setQaNotes(prev => prev.filter(n => n.id !== noteId));
+  };
 
   const toggleTest = (sectionId: string, testId: number) => {
     setQaTests(prev => prev.map(section => {
@@ -766,6 +793,64 @@ export default function Dashboard() {
                 );
               })}
             </div>
+
+            {/* QA Notes Section */}
+            {qaNotes.length > 0 && (
+              <div className="mt-8 bg-zinc-900 rounded-xl border-2 border-yellow-500/50 overflow-hidden">
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-semibold flex items-center gap-2">
+                      <span className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center text-zinc-900 text-sm">📝</span>
+                      QA Notes & Issues
+                    </h3>
+                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-400">
+                      {qaNotes.length} {qaNotes.length === 1 ? 'note' : 'notes'}
+                    </span>
+                  </div>
+                  <div className="space-y-3">
+                    {qaNotes.map((note) => (
+                      <div
+                        key={note.id}
+                        className={`p-4 rounded-lg border ${
+                          note.type === 'bug' 
+                            ? 'bg-red-500/10 border-red-500/30' 
+                            : note.type === 'improvement' 
+                            ? 'bg-blue-500/10 border-blue-500/30' 
+                            : 'bg-zinc-800/50 border-zinc-700'
+                        }`}
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className={`text-xs font-medium px-2 py-0.5 rounded ${
+                                note.type === 'bug' 
+                                  ? 'bg-red-500/20 text-red-400' 
+                                  : note.type === 'improvement' 
+                                  ? 'bg-blue-500/20 text-blue-400' 
+                                  : 'bg-zinc-700 text-zinc-400'
+                              }`}>
+                                {note.type === 'bug' ? '🐛 Bug' : note.type === 'improvement' ? '✨ Improvement' : '📝 Note'}
+                              </span>
+                              <span className="text-xs text-zinc-500">{note.section}</span>
+                              {note.testId && <span className="text-xs text-zinc-600">• Test #{note.testId}</span>}
+                            </div>
+                            <p className="text-zinc-300">{note.text}</p>
+                            <p className="text-xs text-zinc-600 mt-2">{note.timestamp}</p>
+                          </div>
+                          <button
+                            onClick={() => deleteNote(note.id)}
+                            className="text-zinc-500 hover:text-red-400 transition-colors p-1"
+                            title="Delete note"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </>
         )}
 
