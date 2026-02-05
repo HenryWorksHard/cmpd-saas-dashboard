@@ -71,12 +71,12 @@ const phases: Phase[] = [
     name: 'Client App Updates',
     description: 'Invite links, trainer branding, and data isolation',
     estimatedDays: 3,
-    status: 'pending',
+    status: 'complete',
     tasks: [
-      { name: 'Join via invite link flow', done: false },
-      { name: 'Load trainer branding (logo, colors)', done: false },
-      { name: 'Update queries for organization_id', done: false },
-      { name: 'Test data isolation between orgs', done: false },
+      { name: 'Join via invite link flow', done: true },
+      { name: 'Load trainer branding (logo, colors)', done: true },
+      { name: 'Update queries for organization_id', done: true },
+      { name: 'Test data isolation between orgs', done: true },
     ],
   },
   {
