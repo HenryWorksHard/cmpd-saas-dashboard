@@ -352,13 +352,11 @@ const tiers = [
   { name: 'Gym', clients: 'Unlimited', price: 299 },
 ];
 
-const initialNotes: QANote[] = [];
-
 export default function Dashboard() {
   const [mounted, setMounted] = useState(false);
   const [activeTab, setActiveTab] = useState<'build' | 'qa'>('qa');
   const [qaTests, setQaTests] = useState<QASection[]>(qaData);
-  const [qaNotes, setQaNotes] = useState<QANote[]>(initialNotes);
+  const [qaNotes, setQaNotes] = useState<QANote[]>([]);
 
   useEffect(() => {
     setMounted(true);
@@ -367,10 +365,15 @@ export default function Dashboard() {
     if (saved) {
       setQaTests(JSON.parse(saved));
     }
-    const savedNotes = localStorage.getItem('cmpd-qa-notes');
-    if (savedNotes) {
-      setQaNotes(JSON.parse(savedNotes));
-    }
+    // Fetch notes from server (managed by Henry)
+    fetch('/qa-notes.json?' + Date.now())
+      .then(res => res.json())
+      .then(data => {
+        if (data.notes && data.notes.length > 0) {
+          setQaNotes(data.notes);
+        }
+      })
+      .catch(() => {});
   }, []);
 
   // Save QA state to localStorage whenever it changes
@@ -380,13 +383,8 @@ export default function Dashboard() {
     }
   }, [qaTests, mounted]);
 
-  // Save notes to localStorage
-  useEffect(() => {
-    if (mounted) {
-      localStorage.setItem('cmpd-qa-notes', JSON.stringify(qaNotes));
-    }
-  }, [qaNotes, mounted]);
-
+  // Note: Notes are managed by Henry via qa-notes.json
+  // Delete just removes from current view (won't persist)
   const deleteNote = (noteId: number) => {
     setQaNotes(prev => prev.filter(n => n.id !== noteId));
   };
