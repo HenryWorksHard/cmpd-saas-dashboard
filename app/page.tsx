@@ -39,14 +39,14 @@ const phases: Phase[] = [
     name: 'Stripe Billing',
     description: 'Payment processing, subscription tiers, and webhook handling',
     estimatedDays: 3,
-    status: 'in-progress',
+    status: 'complete',
     tasks: [
       { name: 'Create Stripe account & products', done: true },
       { name: 'Set up subscription tiers (Starter/Pro/Studio/Gym)', done: true },
       { name: 'Build webhook endpoint', done: true },
       { name: 'Handle subscription lifecycle events', done: true },
       { name: 'Add billing page to admin portal', done: true },
-      { name: 'Implement client limit enforcement', done: false },
+      { name: 'Implement client limit enforcement', done: true },
     ],
   },
   {
