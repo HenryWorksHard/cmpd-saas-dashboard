@@ -352,9 +352,124 @@ const tiers = [
   { name: 'Gym', clients: 'Unlimited', price: 299 },
 ];
 
+// Competitor data
+const competitors = [
+  {
+    name: 'Trainerize',
+    pricing: '$0-350/mo',
+    strengths: ['Most feature-complete', 'Built-in video calls', 'Large exercise library', 'Challenges & gamification'],
+    weaknesses: ['Expensive at scale', 'Custom app is costly add-on', 'Interface can feel cluttered'],
+  },
+  {
+    name: 'TrueCoach',
+    pricing: '$19-99/mo',
+    strengths: ['Simple, clean interface', 'Lower price point', 'Excellent workout builder UX', 'Automated churn prediction'],
+    weaknesses: ['Limited nutrition features', 'No built-in meal planning', 'No video calls'],
+  },
+  {
+    name: 'PT Distinction',
+    pricing: '$20-100+/mo',
+    strengths: ['AI Program Generator', 'AI Meal Planner', 'Custom branded apps included', 'Automated workflows'],
+    weaknesses: ['UK-focused', 'Less modern UI', 'Smaller market presence in AU/US'],
+  },
+  {
+    name: 'Everfit',
+    pricing: '$0-149/mo',
+    strengths: ['Clean modern UI', 'AI-powered programming', 'Sport-specific tools', 'Good free tier'],
+    weaknesses: ['Newer platform', 'Limited integrations', 'Smaller community'],
+  },
+];
+
+// Feature comparison
+const featureComparison = [
+  { feature: 'Custom Branded App', cmpd: false, trainerize: true, truecoach: true, ptd: true, everfit: true },
+  { feature: 'Program Builder', cmpd: true, trainerize: true, truecoach: true, ptd: true, everfit: true },
+  { feature: 'Nutrition Plans', cmpd: true, trainerize: true, truecoach: true, ptd: true, everfit: true },
+  { feature: 'AI Features', cmpd: false, trainerize: false, truecoach: false, ptd: true, everfit: true },
+  { feature: 'In-App Messaging', cmpd: false, trainerize: true, truecoach: true, ptd: true, everfit: true },
+  { feature: 'Habit Tracking', cmpd: false, trainerize: true, truecoach: true, ptd: true, everfit: true },
+  { feature: 'Video Calls', cmpd: false, trainerize: true, truecoach: false, ptd: false, everfit: false },
+  { feature: 'Wearable Integration', cmpd: false, trainerize: true, truecoach: true, ptd: true, everfit: true },
+  { feature: 'Stripe Payments', cmpd: true, trainerize: true, truecoach: true, ptd: true, everfit: true },
+  { feature: 'Progress Photos', cmpd: true, trainerize: true, truecoach: true, ptd: true, everfit: true },
+  { feature: '1RM Tracking', cmpd: true, trainerize: true, truecoach: true, ptd: true, everfit: true },
+  { feature: 'Group Training', cmpd: false, trainerize: true, truecoach: true, ptd: true, everfit: true },
+];
+
+// Future improvements
+const futureImprovements = [
+  { priority: 'high', name: 'In-App Messaging', desc: 'Real-time chat, push notifications, media sharing', reason: 'Every competitor has this - non-negotiable' },
+  { priority: 'high', name: 'Habit Tracking', desc: 'Daily habits, streaks, custom habits', reason: 'Drives long-term client retention' },
+  { priority: 'high', name: 'Native Mobile App', desc: 'iOS/Android app for clients', reason: 'Web-only is dealbreaker for many trainers' },
+  { priority: 'high', name: 'Trainer-to-Client Payments', desc: 'Trainers receive payments from clients through app', reason: 'Monetization for trainers = stickiness' },
+  { priority: 'medium', name: 'AI Program Generator', desc: 'Generate programs based on goals/assessment', reason: 'AI is the future - early adopters win' },
+  { priority: 'medium', name: 'Custom Branded Apps', desc: 'White-label iOS/Android apps', reason: 'Premium upsell for high-value trainers' },
+  { priority: 'medium', name: 'Group Training/Challenges', desc: 'Group programs, leaderboards, challenges', reason: 'More clients per trainer = higher retention' },
+  { priority: 'medium', name: 'Wearable Integrations', desc: 'Apple Watch, Garmin, WHOOP, Oura', reason: 'Data-driven training is expected now' },
+  { priority: 'low', name: 'Video Calls', desc: 'Built-in video consultations', reason: 'Nice-to-have for hybrid coaching' },
+  { priority: 'low', name: 'Client Self-Booking', desc: 'Calendar integration, automated scheduling', reason: 'Convenience feature' },
+];
+
+// Marketing phases
+const marketingPhases = [
+  {
+    phase: 0,
+    name: 'Pre-Launch',
+    goal: 'Validate & prepare',
+    mrr: '$0',
+    trainers: '5-10 beta',
+    timeline: 'Current',
+    tactics: ['Complete QA testing', 'Founding Trainer beta program', 'Build email list', 'Create demo video'],
+  },
+  {
+    phase: 1,
+    name: 'Soft Launch',
+    goal: 'Product-market fit',
+    mrr: '$10K',
+    trainers: '50-100',
+    timeline: 'Month 1-3',
+    tactics: ['50% lifetime discount for first 50', 'Direct outreach (20 DMs/day)', 'Instagram content', 'Referral program launch'],
+  },
+  {
+    phase: 2,
+    name: 'Growth',
+    goal: 'Establish brand',
+    mrr: '$50K',
+    trainers: '250-400',
+    timeline: 'Month 4-8',
+    tactics: ['Content marketing ramp (blog, YouTube)', 'Facebook community building', 'Fitness Australia partnership', 'Paid ads test ($2-5K/mo)'],
+  },
+  {
+    phase: 3,
+    name: 'Scale',
+    goal: 'Market presence',
+    mrr: '$200K',
+    trainers: '800-1500',
+    timeline: 'Month 9-18',
+    tactics: ['Scale paid ads ($15-30K/mo)', 'NZ & UK expansion', 'Enterprise/studio sales team', 'Affiliate program'],
+  },
+  {
+    phase: 4,
+    name: 'Dominance',
+    goal: '#1 in Australia',
+    mrr: '$1M+',
+    trainers: '5000+',
+    timeline: 'Month 18-36',
+    tactics: ['Major event sponsorships', 'AI features as moat', 'M&A opportunities', 'Team of 20-30'],
+  },
+];
+
+// Notes
+const strategyNotes = [
+  { type: 'feature', text: 'Trainers to receive payments from clients through app', priority: 'high' },
+  { type: 'insight', text: 'Critical gaps vs competitors: in-app messaging, habit tracking, mobile app', priority: 'high' },
+  { type: 'angle', text: 'Our positioning: "Simpler than Trainerize, built by Aussie trainers"', priority: 'medium' },
+  { type: 'insight', text: 'Phase 1 goal: 50 trainers, $10K MRR via personal network', priority: 'medium' },
+];
+
 export default function Dashboard() {
   const [mounted, setMounted] = useState(false);
-  const [activeTab, setActiveTab] = useState<'build' | 'qa'>('qa');
+  const [activeTab, setActiveTab] = useState<'build' | 'qa' | 'strategy'>('qa');
   const [qaTests, setQaTests] = useState<QASection[]>(qaData);
   const [qaNotes, setQaNotes] = useState<QANote[]>([]);
 
@@ -486,17 +601,17 @@ export default function Dashboard() {
           <div className="flex bg-zinc-800 rounded-lg p-1">
             <button
               onClick={() => setActiveTab('build')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                 activeTab === 'build' 
                   ? 'bg-yellow-500 text-zinc-900' 
                   : 'text-zinc-400 hover:text-white'
               }`}
             >
-              Build Progress
+              Build
             </button>
             <button
               onClick={() => setActiveTab('qa')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                 activeTab === 'qa' 
                   ? 'bg-yellow-500 text-zinc-900' 
                   : 'text-zinc-400 hover:text-white'
@@ -504,14 +619,24 @@ export default function Dashboard() {
             >
               QA Testing
             </button>
+            <button
+              onClick={() => setActiveTab('strategy')}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                activeTab === 'strategy' 
+                  ? 'bg-yellow-500 text-zinc-900' 
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              Strategy
+            </button>
           </div>
 
           <div className="text-right">
             <p className="text-2xl font-bold text-yellow-500">
-              {activeTab === 'build' ? `${buildProgressPercent}%` : `${qaProgressPercent}%`}
+              {activeTab === 'build' ? `${buildProgressPercent}%` : activeTab === 'qa' ? `${qaProgressPercent}%` : '→$1M'}
             </p>
             <p className="text-xs text-zinc-500">
-              {activeTab === 'build' ? 'Built' : 'Passed'}
+              {activeTab === 'build' ? 'Built' : activeTab === 'qa' ? 'Passed' : 'Goal'}
             </p>
           </div>
         </div>
@@ -849,6 +974,193 @@ export default function Dashboard() {
                 </div>
               </div>
             )}
+          </>
+        )}
+
+        {/* Strategy Tab */}
+        {activeTab === 'strategy' && (
+          <>
+            {/* Notes Banner */}
+            <div className="bg-yellow-500/10 border-2 border-yellow-500/50 rounded-xl p-4 mb-8">
+              <h3 className="font-semibold text-yellow-400 mb-3 flex items-center gap-2">
+                <span>📝</span> Key Notes & Insights
+              </h3>
+              <div className="grid md:grid-cols-2 gap-3">
+                {strategyNotes.map((note, i) => (
+                  <div key={i} className={`p-3 rounded-lg ${
+                    note.priority === 'high' ? 'bg-red-500/10 border border-red-500/30' : 'bg-zinc-800/50 border border-zinc-700'
+                  }`}>
+                    <span className={`text-xs font-medium px-2 py-0.5 rounded mr-2 ${
+                      note.type === 'feature' ? 'bg-green-500/20 text-green-400' :
+                      note.type === 'insight' ? 'bg-blue-500/20 text-blue-400' :
+                      'bg-yellow-500/20 text-yellow-400'
+                    }`}>
+                      {note.type === 'feature' ? '🚀 Feature' : note.type === 'insight' ? '💡 Insight' : '🎯 Angle'}
+                    </span>
+                    <span className="text-zinc-300 text-sm">{note.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Marketing Roadmap */}
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center text-zinc-900 text-sm">💰</span>
+                Marketing Roadmap: $0 → $1M MRR
+              </h2>
+              <div className="space-y-4">
+                {marketingPhases.map((phase) => (
+                  <div key={phase.phase} className={`bg-zinc-900 rounded-xl border-2 overflow-hidden ${
+                    phase.phase === 0 ? 'border-yellow-500' : 'border-zinc-700'
+                  }`}>
+                    <div className="p-5">
+                      <div className="flex items-start justify-between mb-3">
+                        <div className="flex items-center gap-4">
+                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold ${
+                            phase.phase === 0 ? 'bg-yellow-500 text-zinc-900' : 'bg-zinc-700 text-white'
+                          }`}>
+                            {phase.phase}
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-semibold">{phase.name}</h3>
+                            <p className="text-zinc-500 text-sm">{phase.goal} • {phase.timeline}</p>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-xl font-bold text-green-400">{phase.mrr}</p>
+                          <p className="text-xs text-zinc-500">{phase.trainers} trainers</p>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {phase.tactics.map((tactic, i) => (
+                          <span key={i} className="px-3 py-1 bg-zinc-800 rounded-full text-xs text-zinc-300">
+                            {tactic}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Competitor Analysis */}
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white text-sm">🔍</span>
+                Competitor Analysis
+              </h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {competitors.map((comp) => (
+                  <div key={comp.name} className="bg-zinc-900 rounded-xl border border-zinc-800 p-5">
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="font-semibold text-lg">{comp.name}</h3>
+                      <span className="text-yellow-400 text-sm font-medium">{comp.pricing}</span>
+                    </div>
+                    <div className="mb-3">
+                      <p className="text-xs text-green-400 font-medium mb-1">STRENGTHS</p>
+                      <ul className="space-y-1">
+                        {comp.strengths.map((s, i) => (
+                          <li key={i} className="text-sm text-zinc-400 flex items-center gap-2">
+                            <span className="text-green-500">+</span> {s}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-xs text-red-400 font-medium mb-1">WEAKNESSES</p>
+                      <ul className="space-y-1">
+                        {comp.weaknesses.map((w, i) => (
+                          <li key={i} className="text-sm text-zinc-400 flex items-center gap-2">
+                            <span className="text-red-500">−</span> {w}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Feature Comparison Table */}
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center text-white text-sm">📊</span>
+                Feature Comparison
+              </h2>
+              <div className="bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-zinc-800">
+                        <th className="text-left p-4 text-zinc-400 font-medium">Feature</th>
+                        <th className="p-4 text-center text-yellow-400 font-medium">CMPD</th>
+                        <th className="p-4 text-center text-zinc-400 font-medium">Trainerize</th>
+                        <th className="p-4 text-center text-zinc-400 font-medium">TrueCoach</th>
+                        <th className="p-4 text-center text-zinc-400 font-medium">PT Dist.</th>
+                        <th className="p-4 text-center text-zinc-400 font-medium">Everfit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {featureComparison.map((row, i) => (
+                        <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30">
+                          <td className="p-4 text-zinc-300 text-sm">{row.feature}</td>
+                          <td className="p-4 text-center">
+                            {row.cmpd ? <span className="text-green-400">✓</span> : <span className="text-red-400">✗</span>}
+                          </td>
+                          <td className="p-4 text-center">
+                            {row.trainerize ? <span className="text-green-400">✓</span> : <span className="text-zinc-600">✗</span>}
+                          </td>
+                          <td className="p-4 text-center">
+                            {row.truecoach ? <span className="text-green-400">✓</span> : <span className="text-zinc-600">✗</span>}
+                          </td>
+                          <td className="p-4 text-center">
+                            {row.ptd ? <span className="text-green-400">✓</span> : <span className="text-zinc-600">✗</span>}
+                          </td>
+                          <td className="p-4 text-center">
+                            {row.everfit ? <span className="text-green-400">✓</span> : <span className="text-zinc-600">✗</span>}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Future Improvements */}
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center text-white text-sm">🚀</span>
+                Recommended Future Improvements
+              </h2>
+              <div className="space-y-3">
+                {futureImprovements.map((item, i) => (
+                  <div key={i} className={`bg-zinc-900 rounded-xl border-2 p-4 ${
+                    item.priority === 'high' ? 'border-red-500/50' :
+                    item.priority === 'medium' ? 'border-yellow-500/50' : 'border-zinc-700'
+                  }`}>
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className={`text-xs font-bold px-2 py-0.5 rounded ${
+                            item.priority === 'high' ? 'bg-red-500/20 text-red-400' :
+                            item.priority === 'medium' ? 'bg-yellow-500/20 text-yellow-400' :
+                            'bg-zinc-700 text-zinc-400'
+                          }`}>
+                            {item.priority.toUpperCase()}
+                          </span>
+                          <h3 className="font-semibold text-white">{item.name}</h3>
+                        </div>
+                        <p className="text-zinc-400 text-sm mb-1">{item.desc}</p>
+                        <p className="text-zinc-500 text-xs italic">Why: {item.reason}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </>
         )}
 
