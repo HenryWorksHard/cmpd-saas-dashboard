@@ -7,6 +7,29 @@
       "text": "Change super admin login credentials (email & password) before launch",
       "type": "improvement",
       "timestamp": "2026-02-05 18:13"
+    },
+    {
+      "id": 2,
+      "section": "A. Super Admin Portal",
+      "testId": 6,
+      "text": "Dashboard shows 'Total Users' instead of 'Total Trainers'. Count shows 0 but clicking reveals 4 users. Fix label + count.",
+      "type": "bug",
+      "timestamp": "2026-02-05 18:17"
+    },
+    {
+      "id": 3,
+      "section": "A. Super Admin Portal",
+      "testId": 9,
+      "text": "Remove 'Active Today' and 'Weekly Completions' cards from super admin dashboard - not relevant",
+      "type": "improvement",
+      "timestamp": "2026-02-05 18:17"
+    },
+    {
+      "id": 4,
+      "section": "Architecture",
+      "text": "Super Admin should NOT create programs or have clients. Role is to: manage trainers, view all trainer data (programs, clients) for support, and optionally assign programs to clients on behalf of trainers. Trainers are the ones who create programs and coach clients.",
+      "type": "improvement",
+      "timestamp": "2026-02-05 18:17"
     }
   ]
 }
