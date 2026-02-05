@@ -643,7 +643,7 @@ export default function Dashboard() {
       </header>
 
       <main className="max-w-6xl mx-auto px-6 py-8">
-        {activeTab === 'build' ? (
+        {activeTab === 'build' && (
           <>
             {/* Build Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
@@ -750,7 +750,9 @@ export default function Dashboard() {
               ))}
             </div>
           </>
-        ) : (
+        )}
+
+        {activeTab === 'qa' && (
           <>
             {/* QA Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
