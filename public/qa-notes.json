@@ -1,6 +1,13 @@
 {
   "notes": [
     {
+      "id": 21,
+      "section": "Assets",
+      "text": "CMPD Logo variants saved: cmpd-logo.jpg (black bg), cmpd-logo-white-bg.jpg (white bg), cmpd-logo-transparent.png (transparent). Use dark text logo for light mode, white text logo for dark mode.",
+      "type": "note",
+      "timestamp": "2026-02-06 23:21"
+    },
+    {
       "id": 20,
       "section": "C. Billing & Subscriptions",
       "text": "FUTURE: In-app payments instead of external Stripe redirect - use Stripe Elements for native feel",
