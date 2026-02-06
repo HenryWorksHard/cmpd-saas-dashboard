@@ -485,7 +485,7 @@ const strategyNotes = [
 
 export default function Dashboard() {
   const [mounted, setMounted] = useState(false);
-  const [activeTab, setActiveTab] = useState<'build' | 'qa' | 'strategy'>('qa');
+  const [activeTab, setActiveTab] = useState<'build' | 'qa' | 'strategy' | 'notes'>('qa');
   const [qaTests, setQaTests] = useState<QASection[]>(qaData);
   const [qaNotes, setQaNotes] = useState<QANote[]>([]);
 
@@ -644,6 +644,16 @@ export default function Dashboard() {
               }`}
             >
               Strategy
+            </button>
+            <button
+              onClick={() => setActiveTab('notes')}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                activeTab === 'notes' 
+                  ? 'bg-yellow-500 text-zinc-900' 
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              Notes
             </button>
           </div>
 
@@ -1147,11 +1157,50 @@ export default function Dashboard() {
               </div>
             </div>
 
+            </>
+        )}
+
+        {/* Notes Tab */}
+        {activeTab === 'notes' && (
+          <>
+            {/* Build & QA Notes */}
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center text-white text-sm">📝</span>
+                Build & QA Notes
+              </h2>
+              <div className="bg-zinc-900 rounded-xl border border-zinc-800 p-6">
+                <div className="space-y-3">
+                  {buildNotes.map((note, i) => (
+                    <div key={i} className={`p-4 rounded-lg border ${
+                      note.type === 'bug' ? 'bg-red-500/10 border-red-500/30' :
+                      note.type === 'roadmap' ? 'bg-purple-500/10 border-purple-500/30' :
+                      'bg-zinc-800/50 border-zinc-700'
+                    }`}>
+                      <div className="flex items-start gap-3">
+                        <span className={`text-xs font-medium px-2 py-0.5 rounded shrink-0 ${
+                          note.type === 'bug' ? 'bg-red-500/20 text-red-400' :
+                          note.type === 'roadmap' ? 'bg-purple-500/20 text-purple-400' :
+                          'bg-zinc-700 text-zinc-400'
+                        }`}>
+                          {note.type === 'bug' ? '🐛 Bug' : note.type === 'roadmap' ? '🗺️ Roadmap' : '📝 Note'}
+                        </span>
+                        <div className="flex-1">
+                          <p className="text-zinc-300">{note.text}</p>
+                          <p className="text-xs text-zinc-600 mt-1">{note.date}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/* Future Improvements */}
             <div className="mb-10">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <span className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center text-white text-sm">🚀</span>
-                Recommended Future Improvements
+                Future Improvements Roadmap
               </h2>
               <div className="space-y-3">
                 {futureImprovements.map((item, i) => (
