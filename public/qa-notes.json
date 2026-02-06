@@ -1,9 +1,16 @@
 {
   "notes": [
     {
+      "id": 18,
+      "section": "B. Trainer Signup & Onboarding",
+      "text": "Card details required for trial signup for auto-charge after trial ends",
+      "type": "note",
+      "timestamp": "2026-02-06 12:31"
+    },
+    {
       "id": 17,
       "section": "B. Trainer Signup & Onboarding",
-      "text": "BUG: Signup skips onboarding completely - goes straight to billing instead of org setup (name, slug, logo)",
+      "text": "BUG FIXED: Signup now redirects to dashboard with welcome banner and trial status",
       "type": "bug",
       "timestamp": "2026-02-06 12:27"
     },
