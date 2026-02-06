@@ -1,9 +1,16 @@
 {
   "notes": [
     {
+      "id": 20,
+      "section": "C. Billing & Subscriptions",
+      "text": "FUTURE: In-app payments instead of external Stripe redirect - use Stripe Elements for native feel",
+      "type": "improvement",
+      "timestamp": "2026-02-06 12:43"
+    },
+    {
       "id": 19,
       "section": "B. Trainer Signup & Onboarding",
-      "text": "BUG: Email validation too weak - allows invalid emails like '@gmail' without .com",
+      "text": "BUG FIXED: Email validation now requires proper format (user@domain.com)",
       "type": "bug",
       "timestamp": "2026-02-06 12:36"
     },
