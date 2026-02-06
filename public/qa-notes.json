@@ -1,6 +1,13 @@
 {
   "notes": [
     {
+      "id": 17,
+      "section": "B. Trainer Signup & Onboarding",
+      "text": "BUG: Signup skips onboarding completely - goes straight to billing instead of org setup (name, slug, logo)",
+      "type": "bug",
+      "timestamp": "2026-02-06 12:27"
+    },
+    {
       "id": 16,
       "section": "B. Trainer Signup & Onboarding",
       "text": "After signup, billing page doesn't show which plan was selected - no indication of current trial/plan status",
