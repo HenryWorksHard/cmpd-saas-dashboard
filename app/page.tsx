@@ -412,18 +412,18 @@ const futureImprovements = [
   { priority: 'low', name: 'Client Self-Booking', desc: 'Calendar integration, automated scheduling', reason: 'Convenience feature' },
 ];
 
-// Build & QA Notes (added during testing sessions)
-const buildNotes = [
-  { date: '2026-02-06', type: 'roadmap', text: 'Future: Built-in video calls for trainer-client sessions' },
-  { date: '2026-02-06', type: 'roadmap', text: 'Future: Challenges & gamification to boost engagement' },
-  { date: '2026-02-06', type: 'roadmap', text: 'Future: Churn prediction using activity patterns' },
-  { date: '2026-02-06', type: 'roadmap', text: 'Future: Advanced meal planning & macro tracking' },
-  { date: '2026-02-06', type: 'roadmap', text: 'Future: In-app messaging (trainer ↔ client)' },
-  { date: '2026-02-06', type: 'roadmap', text: 'Future: AI-powered features (program gen, meal plans)' },
-  { date: '2026-02-06', type: 'roadmap', text: 'Future: Custom branded app (white-label)' },
-  { date: '2026-02-06', type: 'roadmap', text: 'Future: Habit tracking & streaks' },
-  { date: '2026-02-06', type: 'roadmap', text: 'Future: Wearable integration (Apple Watch, Fitbit, etc.)' },
-  { date: '2026-02-06', type: 'roadmap', text: 'Future: Group training & team workouts' },
+// Louis's Notes (from QA session 2026-02-06)
+const louisNotes = [
+  { date: '2026-02-06', text: 'Built-in video calls for trainer-client sessions' },
+  { date: '2026-02-06', text: 'Challenges & gamification to boost engagement' },
+  { date: '2026-02-06', text: 'Churn prediction using activity patterns' },
+  { date: '2026-02-06', text: 'Advanced meal planning & macro tracking' },
+  { date: '2026-02-06', text: 'In-app messaging (trainer ↔ client)' },
+  { date: '2026-02-06', text: 'AI-powered features (program gen, meal plans)' },
+  { date: '2026-02-06', text: 'Custom branded app (white-label)' },
+  { date: '2026-02-06', text: 'Habit tracking & streaks' },
+  { date: '2026-02-06', text: 'Wearable integration (Apple Watch, Fitbit, etc.)' },
+  { date: '2026-02-06', text: 'Group training & team workouts' },
 ];
 
 // Marketing phases
@@ -945,64 +945,7 @@ export default function Dashboard() {
               })}
             </div>
 
-            {/* QA Notes Section */}
-            {qaNotes.length > 0 && (
-              <div className="mt-8 bg-zinc-900 rounded-xl border-2 border-yellow-500/50 overflow-hidden">
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-semibold flex items-center gap-2">
-                      <span className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center text-zinc-900 text-sm">📝</span>
-                      QA Notes & Issues
-                    </h3>
-                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-400">
-                      {qaNotes.length} {qaNotes.length === 1 ? 'note' : 'notes'}
-                    </span>
-                  </div>
-                  <div className="space-y-3">
-                    {qaNotes.map((note) => (
-                      <div
-                        key={note.id}
-                        className={`p-4 rounded-lg border ${
-                          note.type === 'bug' 
-                            ? 'bg-red-500/10 border-red-500/30' 
-                            : note.type === 'improvement' 
-                            ? 'bg-blue-500/10 border-blue-500/30' 
-                            : 'bg-zinc-800/50 border-zinc-700'
-                        }`}
-                      >
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-1">
-                              <span className={`text-xs font-medium px-2 py-0.5 rounded ${
-                                note.type === 'bug' 
-                                  ? 'bg-red-500/20 text-red-400' 
-                                  : note.type === 'improvement' 
-                                  ? 'bg-blue-500/20 text-blue-400' 
-                                  : 'bg-zinc-700 text-zinc-400'
-                              }`}>
-                                {note.type === 'bug' ? '🐛 Bug' : note.type === 'improvement' ? '✨ Improvement' : '📝 Note'}
-                              </span>
-                              <span className="text-xs text-zinc-500">{note.section}</span>
-                              {note.testId && <span className="text-xs text-zinc-600">• Test #{note.testId}</span>}
-                            </div>
-                            <p className="text-zinc-300">{note.text}</p>
-                            <p className="text-xs text-zinc-600 mt-2">{note.timestamp}</p>
-                          </div>
-                          <button
-                            onClick={() => deleteNote(note.id)}
-                            className="text-zinc-500 hover:text-red-400 transition-colors p-1"
-                            title="Delete note"
-                          >
-                            ✕
-                          </button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-          </>
+            </>
         )}
 
         {/* Strategy Tab */}
@@ -1163,27 +1106,76 @@ export default function Dashboard() {
         {/* Notes Tab */}
         {activeTab === 'notes' && (
           <>
-            {/* Build & QA Notes */}
+            {/* QA Testing Notes */}
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center text-zinc-900 text-sm">🧪</span>
+                QA Testing Notes
+              </h2>
+              {qaNotes.length > 0 ? (
+                <div className="bg-zinc-900 rounded-xl border border-yellow-500/30 p-6">
+                  <div className="space-y-3">
+                    {qaNotes.map((note) => (
+                      <div
+                        key={note.id}
+                        className={`p-4 rounded-lg border ${
+                          note.type === 'bug' 
+                            ? 'bg-red-500/10 border-red-500/30' 
+                            : note.type === 'improvement' 
+                            ? 'bg-blue-500/10 border-blue-500/30' 
+                            : 'bg-zinc-800/50 border-zinc-700'
+                        }`}
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className={`text-xs font-medium px-2 py-0.5 rounded ${
+                                note.type === 'bug' 
+                                  ? 'bg-red-500/20 text-red-400' 
+                                  : note.type === 'improvement' 
+                                  ? 'bg-blue-500/20 text-blue-400' 
+                                  : 'bg-zinc-700 text-zinc-400'
+                              }`}>
+                                {note.type === 'bug' ? '🐛 Bug' : note.type === 'improvement' ? '✨ Improvement' : '📝 Note'}
+                              </span>
+                              <span className="text-xs text-zinc-500">{note.section}</span>
+                              {note.testId && <span className="text-xs text-zinc-600">• Test #{note.testId}</span>}
+                            </div>
+                            <p className="text-zinc-300">{note.text}</p>
+                            <p className="text-xs text-zinc-600 mt-2">{note.timestamp}</p>
+                          </div>
+                          <button
+                            onClick={() => deleteNote(note.id)}
+                            className="text-zinc-500 hover:text-red-400 transition-colors p-1"
+                            title="Delete note"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="bg-zinc-900 rounded-xl border border-zinc-800 p-6 text-center text-zinc-500">
+                  No QA notes yet. Notes from testing sessions will appear here.
+                </div>
+              )}
+            </div>
+
+            {/* Louis's Notes */}
             <div className="mb-10">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
                 <span className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center text-white text-sm">📝</span>
-                Build & QA Notes
+                Louis&apos;s Notes
               </h2>
-              <div className="bg-zinc-900 rounded-xl border border-zinc-800 p-6">
+              <div className="bg-zinc-900 rounded-xl border border-purple-500/30 p-6">
                 <div className="space-y-3">
-                  {buildNotes.map((note, i) => (
-                    <div key={i} className={`p-4 rounded-lg border ${
-                      note.type === 'bug' ? 'bg-red-500/10 border-red-500/30' :
-                      note.type === 'roadmap' ? 'bg-purple-500/10 border-purple-500/30' :
-                      'bg-zinc-800/50 border-zinc-700'
-                    }`}>
+                  {louisNotes.map((note, i) => (
+                    <div key={i} className="p-4 rounded-lg border bg-purple-500/10 border-purple-500/30">
                       <div className="flex items-start gap-3">
-                        <span className={`text-xs font-medium px-2 py-0.5 rounded shrink-0 ${
-                          note.type === 'bug' ? 'bg-red-500/20 text-red-400' :
-                          note.type === 'roadmap' ? 'bg-purple-500/20 text-purple-400' :
-                          'bg-zinc-700 text-zinc-400'
-                        }`}>
-                          {note.type === 'bug' ? '🐛 Bug' : note.type === 'roadmap' ? '🗺️ Roadmap' : '📝 Note'}
+                        <span className="text-xs font-medium px-2 py-0.5 rounded shrink-0 bg-purple-500/20 text-purple-400">
+                          🗺️ Future
                         </span>
                         <div className="flex-1">
                           <p className="text-zinc-300">{note.text}</p>
