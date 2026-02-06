@@ -468,8 +468,7 @@ const marketingPhases = [
 
 // Notes
 const strategyNotes = [
-  { type: 'feature', text: 'Trainers to receive payments from clients through app', priority: 'high' },
-  { type: 'insight', text: 'Critical gaps vs competitors: in-app messaging, habit tracking, mobile app', priority: 'high' },
+  // 'Trainer payments' moved to Future Improvements (Trainer-to-Client Payments)
   { type: 'angle', text: 'Our positioning: "Simpler than Trainerize, built by Aussie trainers"', priority: 'medium' },
   { type: 'insight', text: 'Phase 1 goal: 50 trainers, $10K MRR via personal network', priority: 'medium' },
 ];
