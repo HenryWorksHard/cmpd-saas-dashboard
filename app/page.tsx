@@ -951,29 +951,6 @@ export default function Dashboard() {
         {/* Strategy Tab */}
         {activeTab === 'strategy' && (
           <>
-            {/* Notes Banner */}
-            <div className="bg-yellow-500/10 border-2 border-yellow-500/50 rounded-xl p-4 mb-8">
-              <h3 className="font-semibold text-yellow-400 mb-3 flex items-center gap-2">
-                <span>📝</span> Key Notes & Insights
-              </h3>
-              <div className="grid md:grid-cols-2 gap-3">
-                {strategyNotes.map((note, i) => (
-                  <div key={i} className={`p-3 rounded-lg ${
-                    note.priority === 'high' ? 'bg-red-500/10 border border-red-500/30' : 'bg-zinc-800/50 border border-zinc-700'
-                  }`}>
-                    <span className={`text-xs font-medium px-2 py-0.5 rounded mr-2 ${
-                      note.type === 'feature' ? 'bg-green-500/20 text-green-400' :
-                      note.type === 'insight' ? 'bg-blue-500/20 text-blue-400' :
-                      'bg-yellow-500/20 text-yellow-400'
-                    }`}>
-                      {note.type === 'feature' ? '🚀 Feature' : note.type === 'insight' ? '💡 Insight' : '🎯 Angle'}
-                    </span>
-                    <span className="text-zinc-300 text-sm">{note.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             {/* Marketing Roadmap */}
             <div className="mb-10">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
@@ -1182,6 +1159,32 @@ export default function Dashboard() {
                           <p className="text-xs text-zinc-600 mt-1">{note.date}</p>
                         </div>
                       </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Strategy Notes & Insights */}
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white text-sm">💡</span>
+                Strategy Notes & Insights
+              </h2>
+              <div className="bg-zinc-900 rounded-xl border border-blue-500/30 p-6">
+                <div className="grid md:grid-cols-2 gap-3">
+                  {strategyNotes.map((note, i) => (
+                    <div key={i} className={`p-3 rounded-lg ${
+                      note.priority === 'high' ? 'bg-red-500/10 border border-red-500/30' : 'bg-zinc-800/50 border border-zinc-700'
+                    }`}>
+                      <span className={`text-xs font-medium px-2 py-0.5 rounded mr-2 ${
+                        note.type === 'feature' ? 'bg-green-500/20 text-green-400' :
+                        note.type === 'insight' ? 'bg-blue-500/20 text-blue-400' :
+                        'bg-yellow-500/20 text-yellow-400'
+                      }`}>
+                        {note.type === 'feature' ? '🚀 Feature' : note.type === 'insight' ? '💡 Insight' : '🎯 Angle'}
+                      </span>
+                      <span className="text-zinc-300 text-sm">{note.text}</span>
                     </div>
                   ))}
                 </div>
