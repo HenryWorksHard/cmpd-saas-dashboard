@@ -1,10 +1,52 @@
 {
   "notes": [
     {
+      "id": 12,
+      "section": "General",
+      "text": "Review statistics and info blocks",
+      "type": "note",
+      "timestamp": "2026-02-06 12:12"
+    },
+    {
+      "id": 11,
+      "section": "I. Client App - Workouts",
+      "text": "BUG: Logged set details does not display",
+      "type": "bug",
+      "timestamp": "2026-02-06 12:12"
+    },
+    {
+      "id": 10,
+      "section": "I. Client App - Workouts",
+      "text": "BUG: Logged set does not have weight and details from previous set defaulted",
+      "type": "bug",
+      "timestamp": "2026-02-06 12:12"
+    },
+    {
+      "id": 9,
+      "section": "E. Trainer Portal - Programs",
+      "text": "BUG: Hyrox finisher RPE EMOM mix up",
+      "type": "bug",
+      "timestamp": "2026-02-06 12:12"
+    },
+    {
+      "id": 8,
+      "section": "I. Client App - Workouts",
+      "text": "Schedule view user home page - needs review",
+      "type": "note",
+      "timestamp": "2026-02-06 12:12"
+    },
+    {
+      "id": 7,
+      "section": "General",
+      "text": "CMPD loading emote/animation needed",
+      "type": "improvement",
+      "timestamp": "2026-02-06 12:12"
+    },
+    {
       "id": 6,
       "section": "A. Super Admin Portal",
       "testId": 12,
-      "text": "BUG: Trainer dashboard shows 0 clients, but database has 4 clients correctly linked to org. Data discrepancy between super admin view and trainer view. Likely app query or RLS issue.",
+      "text": "BUG FIXED: Trainer dashboard showed 0 clients - was filtering role='user' instead of role='client'",
       "type": "bug",
       "timestamp": "2026-02-06 12:04"
     },
