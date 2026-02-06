@@ -1,6 +1,13 @@
 {
   "notes": [
     {
+      "id": 19,
+      "section": "B. Trainer Signup & Onboarding",
+      "text": "BUG: Email validation too weak - allows invalid emails like '@gmail' without .com",
+      "type": "bug",
+      "timestamp": "2026-02-06 12:36"
+    },
+    {
       "id": 18,
       "section": "B. Trainer Signup & Onboarding",
       "text": "Card details required for trial signup for auto-charge after trial ends",
