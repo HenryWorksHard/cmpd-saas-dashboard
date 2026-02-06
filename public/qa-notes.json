@@ -1,6 +1,14 @@
 {
   "notes": [
     {
+      "id": 6,
+      "section": "A. Super Admin Portal",
+      "testId": 12,
+      "text": "BUG: Trainer dashboard shows 0 clients, but database has 4 clients correctly linked to org. Data discrepancy between super admin view and trainer view. Likely app query or RLS issue.",
+      "type": "bug",
+      "timestamp": "2026-02-06 12:04"
+    },
+    {
       "id": 5,
       "section": "General",
       "text": "Email and phone system setup needed",
