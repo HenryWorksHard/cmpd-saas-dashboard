@@ -1,6 +1,13 @@
 {
   "notes": [
     {
+      "id": 16,
+      "section": "B. Trainer Signup & Onboarding",
+      "text": "After signup, billing page doesn't show which plan was selected - no indication of current trial/plan status",
+      "type": "bug",
+      "timestamp": "2026-02-06 12:26"
+    },
+    {
       "id": 15,
       "section": "B. Trainer Signup & Onboarding",
       "text": "Signup page billing section doesn't show which free trial tier user is subscribing to",
