@@ -466,6 +466,83 @@ const marketingPhases = [
   },
 ];
 
+// HubFit competitor data (analyzed 2026-02-07)
+const hubfitData = {
+  competitor: {
+    name: 'HubFit',
+    url: 'https://hubfit.com',
+    tagline: '#1 Coaching Platform',
+    userBase: '50,000+',
+    appRating: 4.9
+  },
+  pricing: [
+    { tier: 'Standard', price: 39, clients: 50 },
+    { tier: 'Premium', price: 69, clients: 100 },
+    { tier: 'Ultimate', price: 119, clients: 'Unlimited' },
+    { tier: 'Business', price: 299, clients: 'Unlimited + White-label' },
+  ],
+  featureComparison: [
+    { feature: 'Workout Builder', eddytrains: true, hubfit: true, priority: 'done' },
+    { feature: 'Supersets Support', eddytrains: true, hubfit: true, priority: 'done' },
+    { feature: 'Exercise Library', eddytrains: '102', hubfit: '5000+', priority: 'high' },
+    { feature: 'Exercise Video Tutorials', eddytrains: true, hubfit: true, priority: 'done' },
+    { feature: 'Program Templates', eddytrains: true, hubfit: true, priority: 'done' },
+    { feature: 'Client Management', eddytrains: true, hubfit: true, priority: 'done' },
+    { feature: 'Stripe Billing', eddytrains: true, hubfit: true, priority: 'done' },
+    { feature: 'Admin Dashboard', eddytrains: true, hubfit: true, priority: 'done' },
+    { feature: 'Client App', eddytrains: true, hubfit: true, priority: 'done' },
+    { feature: 'Check-Ins System', eddytrains: false, hubfit: true, priority: 'high' },
+    { feature: 'Progress Photos Compare', eddytrains: false, hubfit: true, priority: 'high' },
+    { feature: 'Habit Coaching', eddytrains: false, hubfit: true, priority: 'medium' },
+    { feature: 'Nutrition/Meal Planning', eddytrains: false, hubfit: true, priority: 'high' },
+    { feature: 'In-App Macro Tracker', eddytrains: false, hubfit: true, priority: 'medium' },
+    { feature: 'Recipe Books', eddytrains: false, hubfit: true, priority: 'low' },
+    { feature: 'In-App Messaging', eddytrains: false, hubfit: true, priority: 'high' },
+    { feature: 'Voice Notes', eddytrains: false, hubfit: true, priority: 'low' },
+    { feature: 'Group Chats', eddytrains: false, hubfit: true, priority: 'medium' },
+    { feature: 'Community Forums', eddytrains: false, hubfit: true, priority: 'low' },
+    { feature: 'Onboarding Automations', eddytrains: 'basic', hubfit: true, priority: 'medium' },
+    { feature: 'Autoflow/Workflows', eddytrains: false, hubfit: true, priority: 'medium' },
+    { feature: 'Wearable Integrations', eddytrains: false, hubfit: true, priority: 'medium' },
+    { feature: 'Apple Health Sync', eddytrains: false, hubfit: true, priority: 'medium' },
+    { feature: 'Fitbit Integration', eddytrains: false, hubfit: true, priority: 'low' },
+    { feature: 'Workout AI', eddytrains: false, hubfit: true, priority: 'medium' },
+    { feature: 'Meal AI', eddytrains: false, hubfit: true, priority: 'low' },
+    { feature: 'Team Management', eddytrains: false, hubfit: true, priority: 'low' },
+    { feature: 'Custom Branding', eddytrains: false, hubfit: true, priority: 'medium' },
+    { feature: 'White-Label App', eddytrains: false, hubfit: true, priority: 'low' },
+    { feature: 'Zapier Integration', eddytrains: false, hubfit: true, priority: 'low' },
+    { feature: 'Broadcast Messages', eddytrains: false, hubfit: true, priority: 'medium' },
+    { feature: 'Questionnaires', eddytrains: false, hubfit: true, priority: 'medium' },
+  ],
+  prioritizedImprovements: [
+    { priority: 1, feature: 'Check-Ins System', desc: 'Daily/weekly check-ins with photo comparison. Critical for client accountability.', effort: 'Medium', impact: 'High' },
+    { priority: 2, feature: 'In-App Messaging', desc: 'Coach-client messaging with attachments. Eliminates need for WhatsApp.', effort: 'High', impact: 'High' },
+    { priority: 3, feature: 'Expanded Exercise Library', desc: 'Scale from 102 to 500+ exercises. Add video content.', effort: 'Medium', impact: 'High' },
+    { priority: 4, feature: 'Nutrition/Meal Planning', desc: 'Basic meal plan builder with macro targets.', effort: 'High', impact: 'High' },
+    { priority: 5, feature: 'Progress Photos & Measurements', desc: 'Client photo uploads with side-by-side comparison.', effort: 'Medium', impact: 'High' },
+    { priority: 6, feature: 'Habit Tracking', desc: 'Daily habit checklist (water, sleep, steps). High engagement.', effort: 'Low', impact: 'Medium' },
+    { priority: 7, feature: 'Custom Branding', desc: 'Trainer logo, colors, domain. Looks more professional.', effort: 'Medium', impact: 'Medium' },
+    { priority: 8, feature: 'Questionnaires/Forms', desc: 'Custom intake forms and surveys for onboarding.', effort: 'Medium', impact: 'Medium' },
+    { priority: 9, feature: 'Wearable Integrations', desc: 'Apple Health, Fitbit sync for steps, sleep, HR.', effort: 'High', impact: 'Medium' },
+    { priority: 10, feature: 'Workout AI Assistant', desc: 'AI suggestions based on goals, equipment, time.', effort: 'Medium', impact: 'Medium' },
+  ],
+  ourAdvantages: [
+    'Hyrox-specific training focus (niche specialization)',
+    'Inline fitness specialization', 
+    'Personal brand integration (Eddy)',
+    'Simpler, less overwhelming interface',
+    'Australian market focus',
+  ],
+  keyInsights: [
+    'HubFit is mature & feature-rich. Competing feature-for-feature would be expensive.',
+    'Focus on niche differentiation (Hyrox, inline fitness) rather than feature parity.',
+    'Check-ins and in-app messaging are table-stakes — we need these ASAP.',
+    'Exercise library gap (102 vs 5000+) is significant but can be addressed incrementally.',
+    'Pricing is competitive but HubFit offers more clients per tier ($39 = 50 clients vs our 25).',
+  ],
+};
+
 // Notes
 const strategyNotes = [
   // 'Trainer payments' moved to Future Improvements (Trainer-to-Client Payments)
@@ -475,7 +552,7 @@ const strategyNotes = [
 
 export default function Dashboard() {
   const [mounted, setMounted] = useState(false);
-  const [activeTab, setActiveTab] = useState<'build' | 'qa' | 'strategy' | 'notes'>('qa');
+  const [activeTab, setActiveTab] = useState<'build' | 'qa' | 'strategy' | 'notes' | 'hubfit'>('qa');
   const [qaTests, setQaTests] = useState<QASection[]>(qaData);
   const [qaNotes, setQaNotes] = useState<QANote[]>([]);
 
@@ -644,6 +721,16 @@ export default function Dashboard() {
               }`}
             >
               Notes
+            </button>
+            <button
+              onClick={() => setActiveTab('hubfit')}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                activeTab === 'hubfit' 
+                  ? 'bg-yellow-500 text-zinc-900' 
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              HubFit
             </button>
           </div>
 
@@ -1218,6 +1305,184 @@ export default function Dashboard() {
                   </div>
                 ))}
               </div>
+            </div>
+          </>
+        )}
+
+        {/* HubFit Tab */}
+        {activeTab === 'hubfit' && (
+          <>
+            {/* HubFit Header */}
+            <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl border border-purple-500/30 p-6 mb-8">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-2xl font-bold">HubFit Competitive Analysis</h2>
+                  <p className="text-zinc-400 mt-1">Analyzed: Feb 7, 2026 at 3:00 AM</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-3xl font-bold text-purple-400">4.9★</p>
+                  <p className="text-xs text-zinc-500">50,000+ users</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Pricing Comparison */}
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center text-zinc-900 text-sm">💰</span>
+                Pricing Comparison
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-zinc-900 rounded-xl border border-yellow-500/50 p-5">
+                  <h4 className="font-semibold text-yellow-400 mb-3">CMPD (Ours)</h4>
+                  <div className="space-y-2">
+                    {tiers.map((t) => (
+                      <div key={t.name} className="flex justify-between text-sm">
+                        <span className="text-zinc-300">{t.name}</span>
+                        <span className="text-zinc-400">${t.price}/mo • {t.clients}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-zinc-900 rounded-xl border border-purple-500/50 p-5">
+                  <h4 className="font-semibold text-purple-400 mb-3">HubFit</h4>
+                  <div className="space-y-2">
+                    {hubfitData.pricing.map((t) => (
+                      <div key={t.tier} className="flex justify-between text-sm">
+                        <span className="text-zinc-300">{t.tier}</span>
+                        <span className="text-zinc-400">${t.price}/mo • {t.clients} clients</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-red-400 mt-3 p-3 bg-red-500/10 rounded-lg border border-red-500/30">
+                ⚠️ Gap: HubFit gives 50 clients at $39 vs our 25. Consider adjusting limits or adding more value.
+              </p>
+            </div>
+
+            {/* Feature Comparison */}
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center text-white text-sm">📊</span>
+                Feature Comparison
+              </h3>
+              <div className="bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-zinc-800">
+                        <th className="text-left p-3 text-zinc-400 font-medium">Feature</th>
+                        <th className="p-3 text-center text-yellow-400 font-medium">CMPD</th>
+                        <th className="p-3 text-center text-purple-400 font-medium">HubFit</th>
+                        <th className="p-3 text-center text-zinc-400 font-medium">Priority</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {hubfitData.featureComparison.map((row, i) => (
+                        <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30">
+                          <td className="p-3 text-zinc-300 text-sm">{row.feature}</td>
+                          <td className="p-3 text-center">
+                            {row.eddytrains === true ? <span className="text-green-400">✓</span> : 
+                             row.eddytrains === false ? <span className="text-red-400">✗</span> :
+                             <span className="text-yellow-400 text-xs">{row.eddytrains}</span>}
+                          </td>
+                          <td className="p-3 text-center">
+                            {row.hubfit === true ? <span className="text-green-400">✓</span> : 
+                             <span className="text-zinc-400 text-xs">{row.hubfit}</span>}
+                          </td>
+                          <td className="p-3 text-center">
+                            <span className={`text-xs px-2 py-0.5 rounded ${
+                              row.priority === 'high' ? 'bg-red-500/20 text-red-400' :
+                              row.priority === 'medium' ? 'bg-yellow-500/20 text-yellow-400' :
+                              row.priority === 'low' ? 'bg-zinc-700 text-zinc-400' :
+                              'bg-green-500/20 text-green-400'
+                            }`}>
+                              {row.priority}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Prioritized Improvements */}
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center text-white text-sm">🎯</span>
+                Top 10 Improvements Needed
+              </h3>
+              <div className="space-y-3">
+                {hubfitData.prioritizedImprovements.map((item) => (
+                  <div key={item.priority} className={`bg-zinc-900 rounded-xl border-l-4 p-4 ${
+                    item.priority <= 3 ? 'border-red-500' :
+                    item.priority <= 6 ? 'border-yellow-500' :
+                    'border-zinc-600'
+                  }`}>
+                    <div className="flex items-start gap-4">
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm shrink-0 ${
+                        item.priority <= 3 ? 'bg-red-500 text-white' :
+                        item.priority <= 6 ? 'bg-yellow-500 text-zinc-900' :
+                        'bg-zinc-700 text-zinc-300'
+                      }`}>
+                        {item.priority}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-white">{item.feature}</h4>
+                        <p className="text-zinc-400 text-sm mt-1">{item.desc}</p>
+                        <div className="flex gap-4 mt-2">
+                          <span className="text-xs text-zinc-500">Effort: {item.effort}</span>
+                          <span className="text-xs text-zinc-500">Impact: {item.impact}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Our Advantages & Insights */}
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-zinc-900 rounded-xl border border-green-500/30 p-5">
+                <h4 className="font-semibold text-green-400 mb-3 flex items-center gap-2">
+                  <span>💪</span> Our Competitive Advantages
+                </h4>
+                <ul className="space-y-2">
+                  {hubfitData.ourAdvantages.map((adv, i) => (
+                    <li key={i} className="text-sm text-zinc-300 flex items-center gap-2">
+                      <span className="text-green-500">+</span> {adv}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-zinc-900 rounded-xl border border-blue-500/30 p-5">
+                <h4 className="font-semibold text-blue-400 mb-3 flex items-center gap-2">
+                  <span>💡</span> Key Insights
+                </h4>
+                <ul className="space-y-2">
+                  {hubfitData.keyInsights.map((insight, i) => (
+                    <li key={i} className="text-sm text-zinc-300 flex items-start gap-2">
+                      <span className="text-blue-400 shrink-0">→</span> {insight}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Strategy Recommendation */}
+            <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-xl border border-yellow-500/30 p-6">
+              <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <span>🎯</span> Strategic Recommendation
+              </h3>
+              <p className="text-zinc-300">
+                <strong className="text-yellow-400">Don&apos;t compete feature-for-feature.</strong> HubFit has years of development and 50K+ users. 
+                Instead, double down on the <strong className="text-green-400">Hyrox/inline fitness niche</strong> while adding 
+                <strong className="text-red-400"> table-stakes features</strong> (check-ins, messaging) that trainers expect. 
+                Our simpler UX and Australian focus are genuine advantages — lean into them.
+              </p>
             </div>
           </>
         )}
