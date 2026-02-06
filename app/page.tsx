@@ -402,12 +402,28 @@ const futureImprovements = [
   { priority: 'high', name: 'Habit Tracking', desc: 'Daily habits, streaks, custom habits', reason: 'Drives long-term client retention' },
   { priority: 'high', name: 'Native Mobile App', desc: 'iOS/Android app for clients', reason: 'Web-only is dealbreaker for many trainers' },
   { priority: 'high', name: 'Trainer-to-Client Payments', desc: 'Trainers receive payments from clients through app', reason: 'Monetization for trainers = stickiness' },
+  { priority: 'high', name: 'Churn Prediction', desc: 'AI-powered detection of at-risk clients before they cancel', reason: 'Proactive retention saves revenue' },
   { priority: 'medium', name: 'AI Program Generator', desc: 'Generate programs based on goals/assessment', reason: 'AI is the future - early adopters win' },
   { priority: 'medium', name: 'Custom Branded Apps', desc: 'White-label iOS/Android apps', reason: 'Premium upsell for high-value trainers' },
   { priority: 'medium', name: 'Group Training/Challenges', desc: 'Group programs, leaderboards, challenges', reason: 'More clients per trainer = higher retention' },
   { priority: 'medium', name: 'Wearable Integrations', desc: 'Apple Watch, Garmin, WHOOP, Oura', reason: 'Data-driven training is expected now' },
+  { priority: 'medium', name: 'Meal Planning & Macro Tracking', desc: 'Advanced nutrition with macro goals and meal logging', reason: 'Complete nutrition solution for clients' },
   { priority: 'low', name: 'Video Calls', desc: 'Built-in video consultations', reason: 'Nice-to-have for hybrid coaching' },
   { priority: 'low', name: 'Client Self-Booking', desc: 'Calendar integration, automated scheduling', reason: 'Convenience feature' },
+];
+
+// Build & QA Notes (added during testing sessions)
+const buildNotes = [
+  { date: '2026-02-06', type: 'roadmap', text: 'Future: Built-in video calls for trainer-client sessions' },
+  { date: '2026-02-06', type: 'roadmap', text: 'Future: Challenges & gamification to boost engagement' },
+  { date: '2026-02-06', type: 'roadmap', text: 'Future: Churn prediction using activity patterns' },
+  { date: '2026-02-06', type: 'roadmap', text: 'Future: Advanced meal planning & macro tracking' },
+  { date: '2026-02-06', type: 'roadmap', text: 'Future: In-app messaging (trainer ↔ client)' },
+  { date: '2026-02-06', type: 'roadmap', text: 'Future: AI-powered features (program gen, meal plans)' },
+  { date: '2026-02-06', type: 'roadmap', text: 'Future: Custom branded app (white-label)' },
+  { date: '2026-02-06', type: 'roadmap', text: 'Future: Habit tracking & streaks' },
+  { date: '2026-02-06', type: 'roadmap', text: 'Future: Wearable integration (Apple Watch, Fitbit, etc.)' },
+  { date: '2026-02-06', type: 'roadmap', text: 'Future: Group training & team workouts' },
 ];
 
 // Marketing phases
