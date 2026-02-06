@@ -412,18 +412,9 @@ const futureImprovements = [
   { priority: 'low', name: 'Client Self-Booking', desc: 'Calendar integration, automated scheduling', reason: 'Convenience feature' },
 ];
 
-// Louis's Notes (from QA session 2026-02-06)
-const louisNotes = [
-  { date: '2026-02-06', text: 'Built-in video calls for trainer-client sessions' },
-  { date: '2026-02-06', text: 'Challenges & gamification to boost engagement' },
-  { date: '2026-02-06', text: 'Churn prediction using activity patterns' },
-  { date: '2026-02-06', text: 'Advanced meal planning & macro tracking' },
-  { date: '2026-02-06', text: 'In-app messaging (trainer ↔ client)' },
-  { date: '2026-02-06', text: 'AI-powered features (program gen, meal plans)' },
-  { date: '2026-02-06', text: 'Custom branded app (white-label)' },
-  { date: '2026-02-06', text: 'Habit tracking & streaks' },
-  { date: '2026-02-06', text: 'Wearable integration (Apple Watch, Fitbit, etc.)' },
-  { date: '2026-02-06', text: 'Group training & team workouts' },
+// Louis's Notes (from QA sessions - non-duplicate items only)
+const louisNotes: { date: string; text: string }[] = [
+  // All items moved to Future Improvements - add new unique notes here
 ];
 
 // Marketing phases
@@ -1146,23 +1137,29 @@ export default function Dashboard() {
                 <span className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center text-white text-sm">📝</span>
                 Louis&apos;s Notes
               </h2>
-              <div className="bg-zinc-900 rounded-xl border border-purple-500/30 p-6">
-                <div className="space-y-3">
-                  {louisNotes.map((note, i) => (
-                    <div key={i} className="p-4 rounded-lg border bg-purple-500/10 border-purple-500/30">
-                      <div className="flex items-start gap-3">
-                        <span className="text-xs font-medium px-2 py-0.5 rounded shrink-0 bg-purple-500/20 text-purple-400">
-                          🗺️ Future
-                        </span>
-                        <div className="flex-1">
-                          <p className="text-zinc-300">{note.text}</p>
-                          <p className="text-xs text-zinc-600 mt-1">{note.date}</p>
+              {louisNotes.length > 0 ? (
+                <div className="bg-zinc-900 rounded-xl border border-purple-500/30 p-6">
+                  <div className="space-y-3">
+                    {louisNotes.map((note, i) => (
+                      <div key={i} className="p-4 rounded-lg border bg-purple-500/10 border-purple-500/30">
+                        <div className="flex items-start gap-3">
+                          <span className="text-xs font-medium px-2 py-0.5 rounded shrink-0 bg-purple-500/20 text-purple-400">
+                            🗺️ Future
+                          </span>
+                          <div className="flex-1">
+                            <p className="text-zinc-300">{note.text}</p>
+                            <p className="text-xs text-zinc-600 mt-1">{note.date}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="bg-zinc-900 rounded-xl border border-zinc-800 p-6 text-center text-zinc-500">
+                  No unique notes yet. Duplicates moved to Future Improvements below.
+                </div>
+              )}
             </div>
 
             {/* Strategy Notes & Insights */}
