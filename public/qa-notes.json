@@ -1,6 +1,13 @@
 {
   "notes": [
     {
+      "id": 13,
+      "section": "I. Client App - Workouts",
+      "text": "Client section loading - needs CMPD emote/animation",
+      "type": "improvement",
+      "timestamp": "2026-02-06 12:13"
+    },
+    {
       "id": 12,
       "section": "General",
       "text": "Review statistics and info blocks",
