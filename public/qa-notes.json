@@ -1,6 +1,13 @@
 {
   "notes": [
     {
+      "id": 14,
+      "section": "I. Client App - Workouts",
+      "text": "Calendar should be clickable to view workout",
+      "type": "improvement",
+      "timestamp": "2026-02-06 12:20"
+    },
+    {
       "id": 13,
       "section": "I. Client App - Workouts",
       "text": "Client section loading - needs CMPD emote/animation",
