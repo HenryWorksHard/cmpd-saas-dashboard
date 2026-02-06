@@ -1,6 +1,13 @@
 {
   "notes": [
     {
+      "id": 15,
+      "section": "B. Trainer Signup & Onboarding",
+      "text": "Signup page billing section doesn't show which free trial tier user is subscribing to",
+      "type": "improvement",
+      "timestamp": "2026-02-06 12:25"
+    },
+    {
       "id": 14,
       "section": "I. Client App - Workouts",
       "text": "Calendar should be clickable to view workout",
