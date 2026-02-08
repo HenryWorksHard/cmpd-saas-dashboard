@@ -543,6 +543,88 @@ const hubfitData = {
   ],
 };
 
+// Everfit competitor data (analyzed 2026-02-08)
+const everfitData = {
+  competitor: {
+    name: 'Everfit',
+    url: 'https://everfit.io',
+    tagline: '#1 Fitness and Wellness Coaching Platform',
+    userBase: '210,000+',
+    appRating: 4.8
+  },
+  pricing: [
+    { tier: 'Starter', price: 0, clients: 5, note: 'Forever free' },
+    { tier: 'Pro (5)', price: 19, clients: 5, perClient: '$3.80' },
+    { tier: 'Pro (20)', price: 49, clients: 20, perClient: '$2.45' },
+    { tier: 'Pro (50)', price: 95, clients: 50, perClient: '$1.90' },
+    { tier: 'Pro (100)', price: 140, clients: 100, perClient: '$1.40' },
+    { tier: 'Pro (200)', price: 220, clients: 200, perClient: '$1.10' },
+    { tier: 'Studio (50)', price: 105, clients: 50, perClient: '$2.10' },
+    { tier: 'Studio (200)', price: 249, clients: 200, perClient: '$1.25' },
+    { tier: 'Studio (500)', price: 430, clients: 500, perClient: '$0.86' },
+  ],
+  featureComparison: [
+    { feature: 'Workout Builder', eddytrains: true, everfit: true, priority: 'done' },
+    { feature: 'Exercise Library', eddytrains: '102', everfit: '1000+', priority: 'high' },
+    { feature: 'Program Builder', eddytrains: true, everfit: true, priority: 'done' },
+    { feature: 'Progress Photos', eddytrains: true, everfit: true, priority: 'done' },
+    { feature: '1RM Tracking', eddytrains: true, everfit: 'via metrics', priority: 'done' },
+    { feature: 'Nutrition Plans', eddytrains: true, everfit: true, priority: 'done' },
+    { feature: 'Macro Tracking', eddytrains: true, everfit: true, priority: 'done' },
+    { feature: 'Meal Plans', eddytrains: false, everfit: true, priority: 'medium' },
+    { feature: 'Habit Tracking', eddytrains: false, everfit: true, priority: 'high' },
+    { feature: 'Tasks/Reminders', eddytrains: false, everfit: true, priority: 'medium' },
+    { feature: 'In-App Messaging', eddytrains: false, everfit: true, priority: 'high' },
+    { feature: 'AI Programming', eddytrains: false, everfit: true, priority: 'high' },
+    { feature: 'Custom Branding', eddytrains: false, everfit: true, priority: 'medium' },
+    { feature: 'Client App', eddytrains: true, everfit: true, priority: 'done' },
+    { feature: 'Coach Mobile App', eddytrains: false, everfit: true, priority: 'medium' },
+    { feature: 'Team Management', eddytrains: true, everfit: true, priority: 'done' },
+    { feature: 'Group Chat', eddytrains: false, everfit: true, priority: 'low' },
+    { feature: 'Community Forums', eddytrains: false, everfit: true, priority: 'low' },
+    { feature: 'On-Demand Library', eddytrains: false, everfit: true, priority: 'low' },
+    { feature: 'White Label App', eddytrains: false, everfit: true, priority: 'low' },
+    { feature: 'Zapier Integration', eddytrains: false, everfit: true, priority: 'low' },
+    { feature: 'Stripe Payments', eddytrains: true, everfit: true, priority: 'done' },
+    { feature: 'Free Tier', eddytrains: false, everfit: true, priority: 'medium' },
+  ],
+  priceComparison: [
+    { clients: 5, cmpd: 39, everfit: 19, winner: 'everfit' },
+    { clients: 10, cmpd: 39, everfit: 29, winner: 'everfit' },
+    { clients: 20, cmpd: 79, everfit: 49, winner: 'everfit' },
+    { clients: 50, cmpd: 149, everfit: 95, winner: 'everfit' },
+    { clients: 100, cmpd: 299, everfit: 140, winner: 'everfit' },
+    { clients: 200, cmpd: 299, everfit: 220, winner: 'everfit' },
+    { clients: 300, cmpd: 299, everfit: 290, winner: 'cmpd' },
+    { clients: 500, cmpd: 299, everfit: 430, winner: 'cmpd' },
+    { clients: 'Unlimited', cmpd: 299, everfit: 'N/A', winner: 'cmpd' },
+  ],
+  ourAdvantages: [
+    'Flat-rate pricing (predictable costs)',
+    'Unlimited clients at $299/mo',
+    'Dedicated 1RM tracking for strength athletes',
+    'Simpler, less overwhelming interface',
+    'Australian market focus',
+    'Hyrox-specific training (niche)',
+  ],
+  everfitAdvantages: [
+    'Free tier (5 clients forever)',
+    'AI workout programming',
+    'Habit coaching built-in',
+    'Coach mobile app',
+    '30-day trial (vs 14-day)',
+    'Massive user base (210K+ coaches)',
+    'More features overall',
+  ],
+  keyInsights: [
+    'Everfit cheaper below ~250 clients, CMPD wins at scale with unlimited.',
+    'Free tier is great for acquisition — consider adding 3-5 free clients.',
+    'AI workout generation is becoming table stakes — prioritize this.',
+    'Habit tracking differentiates wellness coaching from workout-only apps.',
+    'Per-client pricing is complex; our flat tiers are simpler to understand.',
+  ],
+};
+
 // Notes
 const strategyNotes = [
   // 'Trainer payments' moved to Future Improvements (Trainer-to-Client Payments)
@@ -552,7 +634,7 @@ const strategyNotes = [
 
 export default function Dashboard() {
   const [mounted, setMounted] = useState(false);
-  const [activeTab, setActiveTab] = useState<'build' | 'qa' | 'strategy' | 'notes' | 'hubfit'>('qa');
+  const [activeTab, setActiveTab] = useState<'build' | 'qa' | 'strategy' | 'notes' | 'hubfit' | 'everfit'>('qa');
   const [qaTests, setQaTests] = useState<QASection[]>(qaData);
   const [qaNotes, setQaNotes] = useState<QANote[]>([]);
 
@@ -731,6 +813,16 @@ export default function Dashboard() {
               }`}
             >
               HubFit
+            </button>
+            <button
+              onClick={() => setActiveTab('everfit')}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                activeTab === 'everfit' 
+                  ? 'bg-yellow-500 text-zinc-900' 
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              Everfit
             </button>
           </div>
 
@@ -1482,6 +1574,174 @@ export default function Dashboard() {
                 Instead, double down on the <strong className="text-green-400">Hyrox/inline fitness niche</strong> while adding 
                 <strong className="text-red-400"> table-stakes features</strong> (check-ins, messaging) that trainers expect. 
                 Our simpler UX and Australian focus are genuine advantages — lean into them.
+              </p>
+            </div>
+          </>
+        )}
+
+        {/* Everfit Tab */}
+        {activeTab === 'everfit' && (
+          <>
+            {/* Everfit Header */}
+            <div className="bg-zinc-900 rounded-xl border border-zinc-800 p-6 mb-6">
+              <div className="flex items-start justify-between">
+                <div>
+                  <h2 className="text-2xl font-bold">Everfit Competitive Analysis</h2>
+                  <p className="text-zinc-400 mt-1">{everfitData.competitor.tagline}</p>
+                  <a href={everfitData.competitor.url} target="_blank" rel="noopener noreferrer" className="text-yellow-400 text-sm hover:underline">
+                    {everfitData.competitor.url} →
+                  </a>
+                </div>
+                <div className="text-right">
+                  <p className="text-3xl font-bold text-purple-400">{everfitData.competitor.userBase}</p>
+                  <p className="text-zinc-500 text-sm">Coaches</p>
+                  <p className="text-yellow-400">⭐ {everfitData.competitor.appRating}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Pricing Comparison */}
+            <div className="bg-zinc-900 rounded-xl border border-zinc-800 p-6 mb-6">
+              <h3 className="text-lg font-semibold mb-4">💰 Price Comparison by Client Count</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-zinc-700">
+                      <th className="p-3 text-left">Clients</th>
+                      <th className="p-3 text-center text-yellow-400">CMPD</th>
+                      <th className="p-3 text-center text-purple-400">Everfit</th>
+                      <th className="p-3 text-center">Winner</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {everfitData.priceComparison.map((row, i) => (
+                      <tr key={i} className="border-b border-zinc-800">
+                        <td className="p-3 font-medium">{row.clients}</td>
+                        <td className="p-3 text-center">${row.cmpd}</td>
+                        <td className="p-3 text-center">{typeof row.everfit === 'number' ? `$${row.everfit}` : row.everfit}</td>
+                        <td className="p-3 text-center">
+                          <span className={`px-2 py-1 rounded text-xs font-medium ${
+                            row.winner === 'cmpd' ? 'bg-green-500/20 text-green-400' : 'bg-purple-500/20 text-purple-400'
+                          }`}>
+                            {row.winner === 'cmpd' ? 'CMPD' : 'Everfit'}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-zinc-500 text-sm mt-4">
+                💡 <strong className="text-yellow-400">Key insight:</strong> Everfit cheaper below ~250 clients. CMPD wins at scale with unlimited clients for $299.
+              </p>
+            </div>
+
+            {/* Everfit Pricing Tiers */}
+            <div className="bg-zinc-900 rounded-xl border border-zinc-800 p-6 mb-6">
+              <h3 className="text-lg font-semibold mb-4">📊 Everfit Pricing Model (Per-Client)</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {everfitData.pricing.map((tier, i) => (
+                  <div key={i} className={`p-4 rounded-lg border ${tier.price === 0 ? 'border-green-500/50 bg-green-500/10' : 'border-zinc-700 bg-zinc-800/50'}`}>
+                    <h4 className="font-semibold text-purple-400">{tier.tier}</h4>
+                    <p className="text-2xl font-bold mt-1">
+                      {tier.price === 0 ? 'FREE' : `$${tier.price}`}
+                      <span className="text-sm text-zinc-500">/mo</span>
+                    </p>
+                    <p className="text-zinc-400 text-sm">{tier.clients} clients</p>
+                    {tier.perClient && <p className="text-xs text-zinc-500">{tier.perClient}/client</p>}
+                    {tier.note && <p className="text-xs text-green-400 mt-1">{tier.note}</p>}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Feature Comparison */}
+            <div className="bg-zinc-900 rounded-xl border border-zinc-800 p-6 mb-6">
+              <h3 className="text-lg font-semibold mb-4">⚔️ Feature Comparison</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-zinc-700">
+                      <th className="p-3 text-left">Feature</th>
+                      <th className="p-3 text-center text-yellow-400 font-medium">CMPD</th>
+                      <th className="p-3 text-center text-purple-400 font-medium">Everfit</th>
+                      <th className="p-3 text-center">Priority</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {everfitData.featureComparison.map((row, i) => (
+                      <tr key={i} className="border-b border-zinc-800">
+                        <td className="p-3">{row.feature}</td>
+                        <td className="p-3 text-center">
+                          {row.eddytrains === true ? '✅' : row.eddytrains === false ? '❌' : <span className="text-zinc-400">{row.eddytrains}</span>}
+                        </td>
+                        <td className="p-3 text-center">
+                          {row.everfit === true ? '✅' : row.everfit === false ? '❌' : <span className="text-zinc-400">{row.everfit}</span>}
+                        </td>
+                        <td className="p-3 text-center">
+                          <span className={`px-2 py-1 rounded text-xs ${
+                            row.priority === 'done' ? 'bg-green-500/20 text-green-400' :
+                            row.priority === 'high' ? 'bg-red-500/20 text-red-400' :
+                            row.priority === 'medium' ? 'bg-yellow-500/20 text-yellow-400' :
+                            'bg-zinc-700 text-zinc-400'
+                          }`}>
+                            {row.priority}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Advantages Comparison */}
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-zinc-900 rounded-xl border border-yellow-500/30 p-6">
+                <h3 className="text-lg font-semibold mb-4 text-yellow-400">🏆 CMPD Advantages</h3>
+                <ul className="space-y-2">
+                  {everfitData.ourAdvantages.map((adv, i) => (
+                    <li key={i} className="flex items-start gap-2 text-zinc-300">
+                      <span className="text-green-400 shrink-0">✓</span> {adv}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-zinc-900 rounded-xl border border-purple-500/30 p-6">
+                <h3 className="text-lg font-semibold mb-4 text-purple-400">💪 Everfit Advantages</h3>
+                <ul className="space-y-2">
+                  {everfitData.everfitAdvantages.map((adv, i) => (
+                    <li key={i} className="flex items-start gap-2 text-zinc-300">
+                      <span className="text-purple-400 shrink-0">•</span> {adv}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Key Insights */}
+            <div className="bg-zinc-900 rounded-xl border border-zinc-800 p-6 mb-6">
+              <h3 className="text-lg font-semibold mb-4">💡 Key Insights</h3>
+              <ul className="space-y-3">
+                {everfitData.keyInsights.map((insight, i) => (
+                  <li key={i} className="flex items-start gap-3 text-zinc-300">
+                    <span className="text-blue-400 shrink-0">→</span> {insight}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Strategy Recommendation */}
+            <div className="bg-gradient-to-r from-yellow-500/10 to-purple-500/10 rounded-xl border border-yellow-500/30 p-6">
+              <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <span>🎯</span> Strategic Recommendation
+              </h3>
+              <p className="text-zinc-300">
+                <strong className="text-yellow-400">Leverage your pricing advantage at scale.</strong> Market message: 
+                &quot;Flat-rate pricing. No per-client fees. Train unlimited clients for $299/mo.&quot; 
+                This directly attacks Everfit&apos;s scaling costs. Add <strong className="text-red-400">AI workout generation</strong> and 
+                <strong className="text-green-400"> habit tracking</strong> as priorities — these are becoming table stakes.
+                Consider a <strong className="text-purple-400">free tier (3-5 clients)</strong> to match their acquisition funnel.
               </p>
             </div>
           </>
