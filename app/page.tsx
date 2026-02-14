@@ -630,6 +630,25 @@ const strategyNotes = [
   // 'Trainer payments' moved to Future Improvements (Trainer-to-Client Payments)
   { type: 'angle', text: 'Our positioning: "Simpler than Trainerize, built by Aussie trainers"', priority: 'medium' },
   { type: 'insight', text: 'Phase 1 goal: 50 trainers, $10K MRR via personal network', priority: 'medium' },
+  
+  // Richard Shotton Marketing Psychology (Feb 14, 2026)
+  { type: 'insight', text: 'GOAL DILUTION: Position as ONE thing - "Run your PT business" not "fitness + nutrition + scheduling"', priority: 'high' },
+  { type: 'insight', text: 'CONCRETE > ABSTRACT: "Add a client in 30 seconds" beats "streamline your workflow"', priority: 'high' },
+  { type: 'angle', text: 'PRICE RELATIVITY: Compare to hiring a VA ($500+/mo) not other apps ($20/mo)', priority: 'high' },
+  { type: 'insight', text: 'PREMIUM = QUALITY: Higher price signals quality. Dont compete on price, compete on value', priority: 'medium' },
+  { type: 'angle', text: 'PRATFALL EFFECT: "Not for hobbyist trainers" makes brand MORE appealing to serious trainers', priority: 'medium' },
+  
+  // Hunter Dickinson Sales Techniques (Feb 14, 2026)
+  { type: 'insight', text: 'PEER GROUP: Map fitness influencers trainers follow. Get followed before promoting', priority: 'high' },
+  { type: 'insight', text: 'COMPLIMENT FIRST: DM trainers "Love your content on X" - no pitch. Build relationship first', priority: 'high' },
+  { type: 'insight', text: 'ASK FOR ADVICE: "Building a trainer app - what features matter most?" Gets feedback + relationship', priority: 'medium' },
+  { type: 'angle', text: 'GIFT GIVING: Custom merch for early users, handwritten thank-you cards', priority: 'medium' },
+  { type: 'insight', text: 'NEVER GUESS: On demo calls drill 3 layers deep before showing solution', priority: 'high' },
+  { type: 'insight', text: 'PAY FOR INTROS: Find fitness influencers to intro CMPD to their trainer friends', priority: 'medium' },
+  
+  // Netflix Retention Flow (Feb 14, 2026)
+  { type: 'insight', text: 'RETENTION: Before cancel - offer downgrade, pause option, loss framing', priority: 'high' },
+  { type: 'insight', text: 'RETENTION: After cancel - undo button, exit survey, Klaviyo win-back sequence', priority: 'high' },
 ];
 
 export default function Dashboard() {
