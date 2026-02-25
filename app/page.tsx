@@ -1385,6 +1385,36 @@ export default function Dashboard() {
               </div>
             </div>
 
+            {/* Documents & Resources */}
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <span className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white text-sm">📄</span>
+                Documents & Resources
+              </h2>
+              <div className="bg-zinc-900 rounded-xl border border-emerald-500/30 p-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <a 
+                    href="/docs/eddie-trainer-outreach-guide.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 bg-zinc-800/50 rounded-lg border border-zinc-700 hover:border-emerald-500/50 transition-colors group"
+                  >
+                    <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center">
+                      <span className="text-2xl">📕</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-white group-hover:text-emerald-400 transition-colors">Trainer Recruitment Guide</h3>
+                      <p className="text-zinc-400 text-sm">Eddie&apos;s outreach guide for recruiting beta testers (Hunter Dickinson principles)</p>
+                      <p className="text-zinc-500 text-xs mt-1">Added: Feb 25, 2026</p>
+                    </div>
+                    <div className="text-zinc-500 group-hover:text-emerald-400 transition-colors">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* Future Improvements */}
             <div className="mb-10">
               <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
